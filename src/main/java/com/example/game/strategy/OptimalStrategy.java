@@ -1,10 +1,8 @@
 package com.example.game.strategy;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component("OPTIMAL")
-@Primary
 public class OptimalStrategy implements ComputerStrategy {
 
     @Override

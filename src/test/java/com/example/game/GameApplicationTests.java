@@ -3,6 +3,7 @@ package com.example.game;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
@@ -19,14 +20,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 class GameApplicationTests {
 
+	@Autowired
+	private MockMvc mockMvc;
 
-	private final MockMvc mockMvc;
-	private final ObjectMapper objectMapper;
-
-	GameApplicationTests(MockMvc mockMvc, ObjectMapper objectMapper) {
-		this.mockMvc = mockMvc;
-		this.objectMapper = objectMapper;
-	}
+	@Autowired
+	private ObjectMapper objectMapper;
 
 	@Test
 	void startGame_returnsInitialState() throws Exception {
